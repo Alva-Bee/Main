@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="flex w-screen bg-white shadow-sm"> {/*bg-zinc-50 dark:bg-gray-900 */}
+    <nav className="fixed flex w-screen bg-white shadow-sm"> {/*bg-zinc-50 dark:bg-gray-900 */}
       <div className="flex py-4 items-center justify-between w-full max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-2">
