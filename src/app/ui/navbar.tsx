@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="fixed flex w-screen bg-white shadow-sm"> {/*bg-zinc-50 dark:bg-gray-900 */}
+    <nav className="fixed h-16 z-50 flex w-screen bg-white shadow-sm"> {/*bg-zinc-50 dark:bg-gray-900 */}
       <div className="flex py-4 items-center justify-between w-full max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-2">
 
-          <span className="font-bold text-xl text-black"> {/*dark:text-white*/}
+          <span className="font-bold text-xl text-orange-600"> {/*dark:text-white*/}
             Alva
           </span>
         </div>
