@@ -1,22 +1,21 @@
 "use client";
 
 import { useState } from "react";
-// import { HexagonoPerfil } from "@/app/ui/hexUser";
-// import HexButton from "@/app/ui/hexFase";
+import { HexButton } from "@/app/ui/hexFase";
 
 export default function BotoesPage() {
   const [popupAtivo, setPopupAtivo] = useState<number | null>(null);
 
-  // Lista de textos para os 8 botões
-  const textos = [
-    "Primeiro botão clicado!",
-    "Segundo botão clicado!",
-    "Terceiro botão clicado!",
-    "Quarto botão clicado!",
-    "Quinto botão clicado!",
-    "Sexto botão clicado!",
-    "Sétimo botão clicado!",
-    "Oitavo botão clicado!",
+  // Tipos e textos diferentes para cada botão
+  const botoes = [
+    { tipo: "perfil", texto: "Este é o botão de perfil!" },
+    { tipo: "fase", texto: "Este botão representa uma fase!" },
+    { tipo: "bonus", texto: "Botão de bônus especial!" },
+    { tipo: "alerta", texto: "Atenção: este é um alerta!" },
+    { tipo: "neon", texto: "Um botão neon brilhante!" },
+    { tipo: "imagem", texto: "Botão com imagem customizada!" },
+    { tipo: "classico", texto: "O clássico hexágono!" },
+    { tipo: "dourado", texto: "Botão dourado de destaque!" },
   ];
 
   // Fecha popup ao clicar fora
@@ -24,25 +23,28 @@ export default function BotoesPage() {
 
   return (
     <div
-      className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-300"
+      className="flex min-h-screen items-center justify-center bg-gradient-to-br from-white to-orange-100"
       onClick={handleClickFora}
     >
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-        {textos.map((texto, index) => (
-          <div key={index} className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
+        {botoes.map((botao, index) => (
+          <div
+            key={index}
+            className="relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <HexButton
+              tipo={botao.tipo}
               onClick={() =>
                 setPopupAtivo(popupAtivo === index ? null : index)
               }
-              className="w-36 h-20 rounded-xl bg-zinc-800 text-white font-medium shadow-md hover:bg-zinc-700 transition"
-            >
-              Botão {index + 1}
-            </button>
+              destaque
+            />
 
             {/* Popup estilo balão */}
             {popupAtivo === index && (
-              <div className="absolute left-1/2 -translate-x-1/2 -top-24 w-44 bg-white border border-zinc-300 text-zinc-700 rounded-xl p-3 text-sm shadow-lg animate-fadeIn">
-                {texto}
+              <div className="absolute left-1/2 -translate-x-1/2 -top-28 w-44 bg-white border border-zinc-300 text-zinc-700 rounded-xl p-3 text-sm shadow-lg animate-fadeIn z-50">
+                {botao.texto}
                 {/* Triângulo do balão */}
                 <div className="absolute left-1/2 top-full -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-white" />
               </div>
