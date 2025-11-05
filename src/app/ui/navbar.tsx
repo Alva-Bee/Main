@@ -10,9 +10,17 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
 
-          <span className="font-bold text-xl text-orange-600"> {/*dark:text-white*/}
-            Alva
-          </span>
+          <Image
+            src="/alva_titulo_cor.svg" // caminho da imagem na pasta /public
+            alt="Logo da aplicação"
+            width={80}
+            height={80}
+            className="rounded-full"
+            priority
+          />
+
+          {/* <span className="font-bold text-xl text-orange-600"> dark:text-white Alva </span> */}
+
         </div>
 
         {/* Links */}
@@ -36,13 +44,6 @@ export default function Navbar() {
             className="font-semibold text-black hover:text-orange-600 transition-colors" /*dark:text-white*/
           >
             Badges
-          </Link>
-
-          <Link
-            href="/loja"
-            className="font-semibold text-black hover:text-orange-600 transition-colors" /*dark:text-white*/
-          >
-            Loja
           </Link>
 
           <Link
