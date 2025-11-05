@@ -50,8 +50,8 @@ export function HexButton({
           clipPath:
             "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
           background: destaque
-            ? "linear-gradient(135deg, #facc15, #f97316)"
-            : "linear-gradient(135deg, #6366f1, #a855f7)",
+            ? "linear-gradient(135deg, #facc15, #f97316ff)"
+            : "linear-gradient(135deg, #8a7007ff, #843c09ff)",
           padding: `${borderSize}px`,
           borderRadius: "12px",
         }}

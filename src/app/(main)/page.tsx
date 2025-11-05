@@ -52,9 +52,11 @@ export default function TrilhaPage() {
               className="relative flex flex-col items-center"
               style={{
                 transform:
-                  index % 2 === 0
+                  index % 4 === 0
                     ? "translateX(-40px)" // esquerda
-                    : "translateX(40px)", // direita
+                    : index % 4 === 2
+                    ? "translateX(40px)" // direita
+                    : "translateX(0px)", // centro
               }}
             >
               <HexButton
