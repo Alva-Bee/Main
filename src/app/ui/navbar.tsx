@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Links */}
         <div className="flex gap-16 mr-8">
           <Link
-            href="/"
+            href="/landingpage"
             className="font-semibold text-black hover:text-orange-600 transition-colors " /*dark:text-white*/
           >
             Início
