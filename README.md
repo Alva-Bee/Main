@@ -1,7 +1,9 @@
 Integrantes: 
 
 Gustavo Formagio Mamelle
-Moniquie Ferreira Moraes
+
+Monique Ferreira Moraes
+
 Thayane Ramos Lima
 
 
