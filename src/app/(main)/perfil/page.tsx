@@ -22,12 +22,12 @@ export default function PerfilPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-100 to-zinc-300">
+    <div className="min-h-screen bg-yellow-50">
       {/* === SEÇÃO PRINCIPAL DE PERFIL (tela cheia com margem de 50px) === */}
-      <div className="h-125 flex items-center justify-center p-[50px]">
-        <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-3xl shadow-xl w-1080 h-50 sm:p-40">
+      <div className="h-125 flex items-center justify-center p-[50px] ">
+        <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-3xl shadow-xl w-1080 h-50 sm:p-40 border border-zinc-300">
           
-        <div className="relative w-48 h-48 flex-shrink-0">
+        <div className="relative w-48 h-48 flex-shrink-0 ">
           <HexagonoPerfil 
           src={usuario.foto}
           size={200}
@@ -52,7 +52,7 @@ export default function PerfilPage() {
       {/* === SEÇÃO DE ESTATÍSTICAS === */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto p-[50px] -mt-25">
         {/* Ranking */}
-        <div className="bg-white rounded-2xl shadow-md p-8 text-center">
+        <div className="bg-white rounded-2xl shadow-md p-8 text-center border border-zinc-300">
           <h2 className="text-zinc-500 text-sm font-medium">
             Sua posição no ranking
           </h2>
@@ -61,21 +61,24 @@ export default function PerfilPage() {
           </p>
         </div>
 
+        <div className="bg-white rounded-2xl shadow-md p-8 text-center border border-zinc-300">
+          <h2 className="text-zinc-500 text-sm font-medium">Total de pontos</h2>
+          <p className="text-5xl font-bold text-zinc-800 mt-2">
+            {desempenho.pontos}
+          </p>
+        </div>
+
         {/* Nota média */}
-        <div className="bg-white rounded-2xl shadow-md p-8 text-center">
-          <h2 className="text-zinc-500 text-sm font-medium">Sua nota média</h2>
+        <div className="bg-white rounded-2xl shadow-md p-8 text-center border border-zinc-300">
+          <h2 className="text-zinc-500 text-sm font-medium">Acessibilidade</h2>
           <p className="text-5xl font-bold text-zinc-800 mt-2">
             {desempenho.media.toFixed(1)}
           </p>
         </div>
 
         {/* Total de pontos */}
-        <div className="bg-white rounded-2xl shadow-md p-8 text-center">
-          <h2 className="text-zinc-500 text-sm font-medium">Total de pontos</h2>
-          <p className="text-5xl font-bold text-zinc-800 mt-2">
-            {desempenho.pontos}
-          </p>
-        </div>
+
+        
       </div>
     </div>
   );
