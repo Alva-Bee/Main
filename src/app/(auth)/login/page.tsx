@@ -23,21 +23,28 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-300 p-6">
-      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center  bg-orange-50">
+      <div className="w-full max-w-sm rounded-2xl bg-white  p-8 shadow-lg border border-zinc-200">
                 <div className="flex justify-center mb-4">
-          <Image
-            src="/Alva_Logo.png" // caminho da imagem na pasta /public
+        </div>
+
+        <div className="flex justify-center mb-4">
+          {/* O logo agora é um link clicável que redireciona para /land com cursor pointer */}
+          <a href="/land" className="cursor-pointer">
+            {/* Replaced Next.js Image with a standard <img> tag and a placeholder URL */}
+             <Image
+            src="/alva_titulo_cor.svg" // caminho da imagem na pasta /public
             alt="Logo da aplicação"
             width={70}
             height={70}
             className="rounded-full"
             priority
           />
+          </a>
         </div>
 
-        <h1 className="mb-6 text-center text-2xl font-semibold text-zinc-800">
-          Entrar na Conta
+        <h1 className="mb-6 text-center text-2xl font-semibold text-zinc-600">
+          Login
         </h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
@@ -76,15 +83,15 @@ export default function AuthPage() {
           {/* Botão */}
           <button
             type="submit"
-            className="mt-4 w-full rounded-lg bg-zinc-800 p-2 font-medium text-white transition hover:bg-zinc-700"
+            className="mt-4 w-full rounded-lg bg-orange-400 p-2 font-medium text-white transition hover:bg-orange-600 "
           >
-            Prosseguir
+            Entrar
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-zinc-500">
+        <p className="mt-6 text-center text-sm text-zinc-600">
           Ainda não tem conta?{" "}
-          <a href="/register" className="text-zinc-800 font-medium hover:underline">
+          <a href="/register" className="text-orange-600 font-medium hover:underline cursor-pointer">
             Cadastre-se
           </a>
         </p>
