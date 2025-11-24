@@ -10,7 +10,7 @@ import React from 'react';
 // A simulação inclui as personalizações de cor e cursor solicitadas:
 // - Laranja claro (bg-orange-200) para não concluído.
 // - Cursor de bloqueio (cursor-not-allowed) para não concluído.
-// ===================================================
+// =================================================== 
 
 const HexButton = ({ size = 150, destaque, alt, children }) => {
   const sizeClass = `w-[${size}px] h-[${size}px]`; 
