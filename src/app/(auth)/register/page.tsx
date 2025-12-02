@@ -19,26 +19,55 @@ export default function RegisterPage() {
   const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError("");
-    setSuccess("");
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoading(true);
+  setError("");
+  setSuccess("");
 
-    if (password !== confirmPassword) {
-      setError("As senhas não coincidem. Por favor, verifique.");
+  if (password !== confirmPassword) {
+    setError("As senhas não coincidem. Por favor, verifique.");
+    setIsLoading(false);
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3001/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        senha: password,
+        escola: school,
+        sala: room,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setError(data.error || "Erro ao cadastrar.");
       setIsLoading(false);
       return;
     }
-    
-    // Simulação de lógica de cadastro
+
+    setSuccess("Cadastro realizado com sucesso!");
+    setIsLoading(false);
+
+    // redirecionamento após 1,5s
     setTimeout(() => {
-        console.log("Dados de Cadastro:", { name, email, school, room });
-        setSuccess("Cadastro realizado com sucesso! Você será redirecionado em breve.");
-        setIsLoading(false);
-        // Em um app real: router.push('/login');
+      window.location.href = "/login";
     }, 1500);
-  };
+
+  } catch (err) {
+    setError("Erro ao conectar com o servidor.");
+    setIsLoading(false);
+  }
+};
+
 
   return (
     // Novo layout: Centralizado na tela com um fundo suave

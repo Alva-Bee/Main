@@ -15,12 +15,41 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email:", email);
-    console.log("Senha:", senha);
-    // Aqui você pode adicionar a lógica de login/cadastro
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        senha,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.error || "Erro ao fazer login.");
+      return;
+    }
+
+    // Salvar token
+    localStorage.setItem("token", data.token);
+
+    alert("Login realizado com sucesso!");
+
+    // Redirecionar
+    window.location.href = "/home"; // altere para onde quiser
+
+  } catch (error) {
+    alert("Erro ao conectar ao servidor.");
+  }
+};
+
 
   return (
     <div className="flex min-h-screen items-center justify-center  bg-orange-50">
