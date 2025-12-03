@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 // Definições de dados mockados para as listas
-const mockSchools = ["Escola Municipal Flor de Lis", "Colégio Estadual Rui Barbosa", "Escola Particular Alfa", "Outra"];
-const mockRooms = ["1º Ano A", "2º Ano B", "3º Ano C", "Sala Especial", "Outra"];
+const mockSchools = ["COLLEMAN THE WORLD SCHOOL", "THERZINHA SARTORI PROFESSORA", "ANTONIO MESSIAS SZYMANSKI PROFESSOR", "LUIS WASHINGTON VITA PROFESSOR", "DELFINO RIBEIRO GUIMARAES", "MARILENE DE OLIVEIRA ACETTO PROFESSORA", "MAUA VISCONDE DE", "MARIA ELENA COLONIA PROFESSORA", "EMILIA CREM DOS SANTOS PROFESSORA", "MARCELINA MARIA DA SILVA OLIVEIRA DONA", "IRACEMA CREM PROFESSORA", "MIRNA LOIDE CORREIA FERLE PROFESSORA", "IRENE DA SILVA COSTA PROFESSORA", "MARIA JOSEFINA KUHLMANN FLAQUER PROFESSORA", "OLAVO HANSEN", "MARTA TERESINHA ROSA PROFESSORA", "JOAO PAULO II", "MARLENE CAMARGO RIBEIRO PROFESSORA", "SADA UMEIZAWA PROFESSORA", "MARIA APARECIDA DAMO FERREIRA", "SESI 397 CENTRO EDUCACIONAL", "SESI 079 CENTRO EDUCACIONAL", "ALEXANDRE VENANCIO ARMINAS MONS COLEGIO", "BARAO DE MAUA COLEGIO", "LEONARDO DA VINCI COLEGIO", "ELITE REDE DE ENSINO UNIDADE II", "METODO COLEGIO", "COLEGIO UNIVERSITARIO MAUA", "OBJETIVO MAUA CENTRO EDUCACIONAL", "RENIL COLEGIO", "JOAO RICARDO BORGES DE LIMA", "ETEC DE MAUA", "AFONSO PASCHOTTE PADRE", "JARDIM ZAIRA VIII", "DRUMMOND COLEGIO", "COLEGIO RS INSTITUTO EDUCACIONAL LTDA", "ANTONIO LAPATE NETTO PROFESSOR", "JOSE DANIEL DA SILVEIRA", "HANS GRUDZINSKI", "MERCEDES VALENTINA GIANNOCARIO PROFESSORA", "JARDIM ORATORIO", "MARIA EXPEDITA SILVA PROFESSORA", "VILA MAGINI II", "JARDIM CRUZEIRO", "Outra"];
+const mockRooms = ["1º Ano A", "1º Ano B", "1º Ano C","2º Ano A", "2º Ano B", "2º Ano C","3º Ano A", "3º Ano B", "3º Ano C","Sala Especial"];
 
 export default function RegisterPage() {
   // Estados para os campos do formulário
@@ -89,7 +89,7 @@ export default function RegisterPage() {
         
         {/* Logo/Imagem de Cabeçalho */}
         <div className="flex flex-col items-center mb-8 lg:mb-6">
-          <a href="/land" className="cursor-pointer mb-2">
+          <a href="/landingpage" className="cursor-pointer mb-2">
             {/* Usando <img> padrão com placeholder para compatibilidade */}
             <Image 
             src="/alva_titulo_cor.svg" // caminho da imagem na pasta /public

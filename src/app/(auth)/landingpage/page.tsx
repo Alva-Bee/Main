@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { inter } from '@/app/ui/fonts';
+import Image from "next/image";
+import Link from "next/link";
 
 
 // Classes de cor primária (Laranja, como no logo ALVA)
@@ -41,12 +43,20 @@ function land() {
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       
       {/* 1. Header Fixo (Estilo ALVA) */}
-      <header className="fixed top-0 left-0 w-full">
+      <header className="fixed top-0 left-0 w-full bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           {/* Logo "ALVA" */}
-          <div className="text-3xl font-bold tracking-tight text-orange-500">
-            ALVA
-          </div>
+          
+            <Link href="/landingpage"> 
+              <Image
+                src="/alva_titulo_cor.svg" 
+                alt="Logo da aplicação"
+                width={80}
+                height={80}
+                className="rounded-full"
+                priority
+              />
+            </Link>
 
           {/* Botões de Ação (COMEÇAR preenchido, ENTRAR contorno) */}
           <div className="flex space-x-3">
@@ -105,7 +115,7 @@ function land() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card title="Missão" description=" Transformar a educação financeira em algo acessível e envolvente para todos." />
+              <Card title="Missão" description=" a educação financeira em algo acessível e envolvente para todos." />
               <Card title="Visão" description="Ser a plataforma líder em aprendizado financeiro na América Latina até 2028." />
               <Card title="Valores" description="Inovação, Transparência, Excelência e Foco no Sucesso do Aluno." />
             </div>

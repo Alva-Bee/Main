@@ -59,7 +59,7 @@ export default function AuthPage() {
 
         <div className="flex justify-center mb-4">
           {/* O logo agora é um link clicável que redireciona para /land com cursor pointer */}
-          <a href="/land" className="cursor-pointer">
+          <a href="/landingpage" className="cursor-pointer">
             {/* Replaced Next.js Image with a standard <img> tag and a placeholder URL */}
              <Image
             src="/alva_titulo_cor.svg" // caminho da imagem na pasta /public
