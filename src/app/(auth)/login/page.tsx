@@ -19,7 +19,7 @@ export default function AuthPage() {
   e.preventDefault();
 
   try {
-    const response = await fetch("http://localhost:3001/login", {
+    const response = await fetch("http://localhost:3001/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export default function AuthPage() {
     alert("Login realizado com sucesso!");
 
     // Redirecionar
-    window.location.href = "/home"; // altere para onde quiser
+    window.location.href = "/trilha"; // altere para onde quiser
 
   } catch (error) {
     alert("Erro ao conectar ao servidor.");
